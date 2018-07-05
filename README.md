@@ -1,7 +1,7 @@
 
-# ypw-editor
+# custom editor
 
-> ypw-editor
+> custom editor
 
 ## Build Setup
 

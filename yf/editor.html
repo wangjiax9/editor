@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+</head>
+<body>
+	<div style="border-bottom:1px dashed #808080;padding:20px;">
+		<button id="bold">加粗</button>
+		<button id="strikeThrough">删除线</button>
+		<button id="h1">H1</button>
+		<button id="h2">H2</button>
+		<button id="italic">斜体</button>
+		<button id="hr">HR</button>
+		<button id="blockquote">引用</button>
+		<button id="link">超链接</button>
+		<button id="img">图片</button>
+		<button id="atUser">@用户</button>
+		<button id="atGame">@游戏</button>
+		<button id="dataCommon">数据召唤术</button>
+		<button id="viewSource">魔王现身</button>
+	</div>
+	<div id="editor_hidden" contenteditable="false"></div>
+	<div id="editor" contentEditable="true"></div>
+	<div id="showSource" style="border-top:1px dashed #808080;padding:20px"></div>
+	<script src="zepto.min.js"></script>
+	<script src="fastclick.js"></script>
+	<script type="text/javascript" src="rich_editor.js"></script>
+	<script type="text/javascript">
+		FastClick.attach(document.body);
+		RE.init();
+		RE.setPlaceholder("分享你和游戏的故事~");
+		$("#bold").click(function(){
+			RE.setBold();
+		});
+		$("#strikeThrough").click(function(){
+			RE.setStrikeThrough();
+		});
+		$("#italic").click(function(){
+			RE.setItalic();
+		});
+		$("#h1").click(function(){
+			RE.setHeading("h1");
+		});
+		$("#h2").click(function(){
+			RE.setHeading("h2");
+		});
+		$("#hr").click(function(){
+			RE.setHr();
+		});
+		$("#blockquote").click(function(){
+			RE.setBlockquote();
+		});
+		$("#atUser").click(function(){
+			RE.insertUserTest(344,"真的插在后面了")
+		});
+		$("#atGame").click(function(){
+			RE.insertGameTest(123,"https://gameapp.fp.ps.netease.com/file/598176fb7f9d2ae91707eab0fzKrcZF6","睡觉偶记")
+		});
+		$("#dataCommon").click(function(){
+			dataCmomon();
+		});
+		$("#viewSource").click(function(){
+			$("#showSource").text(RE.getHtml());
+		});
+		function dataCmomon(){
+			var content = "<h1>自远古以来，魂族与人族之间阴阳分隔</h1><h2>燃烧幽魂木可以在方圆10丈内白息之内打开一条通往幽冥的通道</h2><p><strike>到屁股粮农癌</strike>瘤任，在魂界，以修炼魂力为主<!--USER0-->魂元<b>魂淡</b>。</p><hr><p><i>我是斜体，是斜着不是站着也不是躺着更不是歪着的姿势</i></p><blockquote>我是引用，雷打不动，<br>独占一栋</blockquote><p>魂影倒影逆血倒流，引魂经五腹六脏上通天穹穴，下至通幽穴</p><!--GAME0--><p>任何表达式。</p><p>expression2<!--USER1--></p><p>任何表达式。</p><!--GAME1-->  <!--IMG0--><div>我还能怎<b>样，我还需</b>要怎与昂<span style=\"color: rgb(51, 51, 51); font-family: arial, sans-serif; font-size: 12px; line-height: 31px; widows: 1; background-color: rgb(255, 229, 229);\">4分种前ypw.163.com使用文件验证</span><b style=\"font-size: 12px; color: rgb(204, 0, 0); font-family: arial, sans-serif; line-height: 31px; widows: 1;\">验证失败</b><span style=\"color: rgb(51, 51, 51); font-family: arial, sans-serif; font-size: 12px; line-height: 31px; widows: 1; background-color: rgb(255, 229, 229);\">，原因：找不到验证的文件或网页。</span></div><span style=\"color: rgb(51, 51, 51); font-family: arial, sans-serif; font-size: 12px; line-height: 31px; widows: 1; background-color: rgb(255, 229, 229);\">问题分析&amp;解决办法： 在访问验证文件或者网页的时候服务器返回404，一般可能是验证文件放置的位置不正确。</span><div><br></div><div>还不容易敲了一筐</div><div>    <!--IMG1--></div><div>可是结果闹成这样</div>";
+			RE.editor.innerHTML = content;
+		}
+	</script>
+</body>
+</html>

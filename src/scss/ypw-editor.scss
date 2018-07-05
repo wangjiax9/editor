@@ -1,0 +1,298 @@
+@import "./_mixin.scss";
+@import "./_variables.scss";
+.ypw-editor{
+    width:878px;
+    height:598px;
+    position: relative;
+    border: solid 1px #e6eff4;
+    @include borderRadius(4px);
+    @include boxShadow(inset 0 0 6px 0 #e6eff4);
+    
+    .ico-rich{
+        display: inline-block;
+        width:24px;
+        height: 24px;  
+        vertical-align: middle;
+        cursor: pointer;
+        position: relative;
+        top:-2px;
+        margin-right: 3px;
+        // background: url("https://gameapp.fp.ps.netease.com/file/5af292647f9d2a4e5b9f6301GCTHvMqw") no-repeat;
+        // 打包路径不对
+        background: url("../images/editor-ico.png") no-repeat;
+        &-bold{background-position:0 0;}
+        &-strikethrough{background-position: 0 -24px;}
+        &-img{background-position: 0 -48px;}
+        &-italic{background-position: -48px 0;}
+        &-h1{background-position: -48px -24px;}
+        &-h2{background-position: -48px -48px;}
+        &-blockquote{background-position: 0 -72px;}
+        &-link{background-position: -48px -72px;}
+        &-game{background-position: 0 -96px;}
+        &-hr{background-position: -48px -96px;}
+        &-emoticon{background-position: 0 -120px;}
+    }
+    .toolbar{
+        height:44px;
+        background: #f5f9fb;
+        border-bottom: solid 1px #e6eff4;
+        .menu{
+            position: relative;
+            float:left;
+            margin-top:10px;
+            margin-left:20px;
+            cursor: pointer;
+            &.active{
+                .ico-rich-bold{background-position: -24px 0; }
+                .ico-rich-strikethrough{background-position: -24px -24px; }
+            }
+        }
+        .menu-extra{
+            float:right;
+            margin-top:6px;
+            margin-right:20px;
+            select{
+                height: 30px;
+                font-family: "microsoft yahei";
+                font-size: 16px;
+                color:$common-text;
+                padding: 0 18px;
+                margin-left:5px;
+                outline: none;
+                border-color: #d8e6ef;
+                @include borderRadius(4px);
+            }
+        }
+        &.blur{
+            .menu{
+                cursor: default;
+                .ico-rich{
+                    cursor: default;
+                }
+            }
+        }
+    }
+    .edit-container{
+        font-size: $font-middle;
+        color:$stress-text;
+        padding:16px 20px;
+        overflow-x: hidden;
+        outline: none;
+        resize: none;
+        h1{
+            font-size:28px;
+        }
+        h2{
+            font-size:$font-big;
+        }
+        hr{
+            border:1px dashed $color-b4;
+            margin:30px 0;
+        }
+        blockquote{
+            color:#808080;
+            margin:30px 0;
+            padding: 0 0 0 30px;
+            border: none;
+            background: url("https://gameapp.fp.ps.netease.com/file/59e8511a7f9d2a0c8894d5fcjoxmJWZM") 0 5px no-repeat;
+        }
+        a{
+            text-decoration: underline;
+            color:$mute-text;
+        }
+        .img{
+            display: block;
+            max-width:815px;
+            margin:30px auto;
+            padding:0 10px;    
+        }
+        .at-user{
+            color:$mute-text;
+            margin:0 5px;
+        }
+        .at-game{
+            margin:20px 0;
+            width:100%;
+            height:84px;
+            line-height: 1;
+            background: #fff;
+            position: relative;
+            user-select:none;
+            border:1px solid $color-b4;
+            @include borderRadius(6px);
+            .at-game-img{
+                width:60px;
+                height:60px;
+                position: absolute;
+                left:12px;
+                top:12px;
+                @include borderRadius(6px);
+            }
+            .title{
+                font-weight: bold;
+                position: absolute;
+                left:82px;
+                top:32px;
+            }
+        }
+        p{
+            color:$stress-text;
+            margin-bottom: 0;
+        }
+        &::-webkit-scrollbar{
+            width:8px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background: #e0e9ee;
+            border-radius: 4px;
+        }
+        &::-webkit-scrollbar-track {
+            background:#f2f7fa ;
+            border-radius: 4px;
+        }
+        &::-webkit-scrollbar-button{
+            background: transparent;
+            height: 4px;
+        }
+        .img-view{
+            text-align: center;
+            .img{
+                display: block;
+                max-width:100%;
+                margin:30px auto;
+                padding:0 10px;
+            }
+            .img-preview{
+                display: block;
+                max-width: 200px;
+                max-height: 200px;
+                min-width: 100px;
+                min-height: 50px;
+            }
+
+            .img-upload{
+                position: relative;
+                display: inline-block;
+                margin:auto;
+                .upload-status{
+                    width:100%;
+                    height:100%;
+                    position: absolute;
+                    left:0;
+                    top:0;
+                    text-align: center;
+                    color:$label-text;
+                    font-size:$font-default;
+                    background: rgba(0,0,0,.5);
+                    .progress{
+                        width:100%;
+                        position: absolute;
+                        left:50%;
+                        top:50%;
+                        @include transform(translateX(-50%) translateY(-50%));
+                    }
+                }
+                &:selected{
+                    .upload-status{
+                        background:rgba(87,145,225,.8);
+                    }
+                }
+            }
+        }
+    }
+    .placeholder{
+        visibility: visible;
+        width: 100%;
+        position: absolute;
+        left: 20px;
+        color: #ccc;
+        box-sizing: border-box;
+        pointer-events: none;
+        margin: 0px;
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+}
+.editor-panel{
+    display: none;
+    position: absolute;
+    z-index:999;
+    background: $content-bg;
+    @include boxShadow(0 0 16px 2px #E6EFF4);
+    .pointer{
+        display: block;
+        width: 14px;
+        height: 14px;
+        background: #fff;
+        box-shadow: 0 0 16px 2px #E6EFF4;
+        transform: rotate(45deg);
+        position: absolute;
+        top: -7px;
+        right: 124px;
+        @include transform(rotate(45deg));
+        &:after{
+            content: "";
+            display: block;
+            width: 31px;
+            height: 16px;
+            background: #ffffff;
+            position: absolute;
+            left: -1px;
+            top: 3px;
+            @include transform(rotate(-45deg));
+        }
+    }
+    .title{
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .form-row{
+        margin-bottom:10px;
+    }
+    .center{
+        text-align: center;
+    }
+    .mb0{
+        margin-bottom: 0;
+    }
+    &-link{
+        padding:16px 20px;
+        top:50px;
+        @include transform(translateX(-50%));
+        .input{
+            width:240px;
+            height:24px;
+            margin-bottom: 0;
+        }
+    }
+    &-emoticon{
+        width:584px;
+        height:260px;
+        top:50px;
+        left:-50px;
+        .pointer{
+            left:54px;
+        }
+        .emot-grid{
+            padding-top: 30px;
+            padding-left: 5px;
+            @include clearfix();
+            dd{
+                float:left;
+                width:84px;
+                height:30px;
+                line-height: 30px;
+                font-size: $font-small;
+                cursor: pointer;
+                text-align: center;
+                margin: 0 0 14px 10px;
+                &:hover{
+                    background: #F8FBFD;
+                    color:$mute-text;
+                    @include borderRadius(4px);
+                }
+            }
+        }
+    }
+}

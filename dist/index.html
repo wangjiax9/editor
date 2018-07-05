@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://ypw.163.com/static/evolution/dist/css/ypw/ypw-thread.min.css">
+		<link rel="shortcut icon" href="http://gameapp.fp.ps.netease.com/file/582e6bab0699e2125e34b6b1F7N6l2GF" />
+		<title>ypw-editor</title>
+    <style>
+     .input{
+				width:524px;
+				height:40px;
+				font-size:20px;
+				margin-bottom:15px;
+			}
+			#editor_hidden {
+				visibility: visible;
+				position: absolute;
+				width: 100%;
+				box-sizing: border-box;
+				pointer-events: none;
+				/* For Display */
+				margin: 0px;
+				/* For Preview Title */
+				word-break: break-all;
+				word-wrap: break-word;
+			}
+    </style>
+  <link href="/ypw-editor.css" rel="stylesheet"></head>
+  <body>
+			ypw-editor
+    <div class="ypw-main ypw-main-narrow">
+			<div class="cc">
+				<div class="ypw-thread-edit">
+					<div>
+						<input class="input" type="text" id="title" >
+					</div>
+					<div class="ypw-editor" id="editor">
+					</div>
+				</div>
+				<button id="getContent">getContent</button>
+				<div class="c" id="preview">
+
+				</div>
+			</div>
+		</div>
+    <script src="assets/js/jquery-3.1.1.min.js"></script>
+		<!-- <script src="src/main.js"></script> -->
+  <script type="text/javascript" src="/ypw-editor.js"></script></body>
+</html>

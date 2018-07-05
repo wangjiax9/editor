@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+		<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+
+	<body>
+
+		<div id="log"></div>
+		<script>
+			$(function() {
+
+				var arr = ["spreadId", "spreadCode", "userName", "telephone", "provinceCode", "cityCode", "validCode"];
+				var leads = {};
+
+				function leadsadd(leads, key, value) {  // 構造leads1對象 
+					var leads1 = {
+					};
+					if (leads.spreadId != null) {// 包含
+						leads1.spreadId=leads.spreadId;
+					}
+					if (leads.spreadCode != null) {// 包含
+						leads1.spreadCode=leads.spreadCode;
+					}
+					if (leads.userName != null) {// 包含
+						leads1.userName=leads.userName;
+					}
+					if (leads.telephone != null) {// 包含
+						leads1.telephone=leads.telephone;
+					}
+					if (leads.provinceCode != null) {// 包含
+						leads1.provinceCode=leads.provinceCode;
+					}
+					if (leads.cityCode != null) {// 包含
+						leads1.cityCode=leads.cityCode;
+					}
+					if (leads.validCode != null) {// 包含
+						leads1.validCode=leads.validCode;
+					}
+					if(key == "spreadId") {
+						leads1.spreadId = value;
+					} else if(key == "spreadCode") {
+						leads1.spreadCode = value;
+
+					} else if(key == "userName") {
+						leads1.userName = value;
+
+					} else if(key == "telephone") {
+						leads1.telephone = value;
+					} else if(key == "provinceCode") {
+						leads1.provinceCode = value;
+					} else if(key == "cityCode") {
+						leads1.cityCode = value;
+					} else if(key == "validCode") {
+						leads1.validCode = value;
+					}
+					$.extend(leads, leads1);
+					return leads;
+				}
+				leadsadd(leads, arr[0], 2);
+				leadsadd(leads, arr[2], "zhh");
+				leadsadd(leads, arr[3], "123");
+
+				var printObj = typeof JSON != "undefined" ? JSON.stringify : function(obj) {
+					
+					$.each(obj, function(key, val) {
+						var next =  + ": ";
+						next += $.isPlainObject(val) ? printObj(val) : val;
+						arr.push(next);
+					});
+					return "{ " + arr.join(", ") + " }";
+				};
+				$("#log").append(printObj(leads));
+			})
+		</script>
+
+	</body>
+
+</html>

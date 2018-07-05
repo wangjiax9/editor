@@ -1,0 +1,289 @@
+html {
+  font-family: PingFangSC-Regular; 
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%;
+}
+
+html {
+  -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color:transparent;
+  margin:0px;
+  padding:0px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size:1.6rem; /*编辑器字体大小*/
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; 
+  vertical-align: baseline; 
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+* {
+  outline: 0px solid transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+}
+a {
+  color:#00b4b4;
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+em{
+  font-style: normal;
+}
+p{
+  margin:0;
+  line-height: 1.5;
+}
+hr{
+  border: 1px dashed #e6eff4;
+  margin: 30px 0;
+}
+blockquote{
+  color:#808080;
+  margin:30px 0;
+  padding:10px 10px 10px 40px;
+  background: url("https://gameapp.fp.ps.netease.com/file/59e8511a7f9d2a0c8894d5fcjoxmJWZM") 10px 12px no-repeat;
+  background-color: #f4f4f4;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 28px;
+  margin: 5px 0;
+}
+h2{
+  font-size:2.4rem;
+  margin:0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; 
+  font: inherit; 
+  margin: 0; 
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"], 
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; 
+  cursor: pointer; 
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; 
+  padding: 0; 
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield; 
+  -webkit-box-sizing: content-box; 
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0; 
+  padding: 0; 
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+#editor_hidden {
+  visibility: visible;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  pointer-events: none;
+  /* For Display */
+  margin: 0px;
+  /* For Preview Title */
+  word-break: break-all;
+  word-wrap: break-word;
+}
+#editor {
+  /* Size */
+  min-height: 400px;
+  padding:15px;
+  color:#333333; /*字体颜色*/
+  word-break:break-all; /*文字按字换行*/
+  caret-color:#00b2b2; /*光标色*/
+
+}
+.game-widget{
+  width:80%;
+  height:84px;
+  position: relative;
+  margin:10px 0;
+  border:1px solid #ebebeb;
+  border-radius: 6px;
+}
+.game-widget .logo{
+  width:60px;
+  height:60px;
+  position: absolute;
+  left:12px;
+  top:12px;
+  border-radius: 6px;
+}
+.game-widget .title{
+  line-height: 1;
+  font-size:16px;
+  font-weight: bold;
+  position: absolute;
+  left: 82px;
+  top:32px;
+
+}
+.at-user{
+  color:#00b4b4;
+  margin:0 2px;
+}

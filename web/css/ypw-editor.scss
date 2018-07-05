@@ -1,0 +1,197 @@
+@import "./_mixin.scss";
+@import "./_variables.scss";
+.ypw-editor{
+    width:878px;
+    height:598px;
+    position: relative;
+    border: solid 1px #e6eff4;
+    @include borderRadius(4px);
+    @include boxShadow(inset 0 0 6px 0 #e6eff4);
+    
+    .ico-rich{
+        display: inline-block;
+        width:24px;
+        height: 24px;  
+        vertical-align: middle;
+        cursor: pointer;
+        position: relative;
+        top:-2px;
+        margin-right: 3px;
+        background: url("https://gameapp.fp.ps.netease.com/file/59784c9e5e60275ebadf6cc4AipjfWkd") no-repeat;
+        &-bold{background-position:0 0;}
+        &-bold:hover{background-position:0 0;}
+        &-linethrough{background-position: 0 -24px;}
+        &-linethrough:hover{background-position: 0 -24px;}
+        &-img{background-position: 0 -48px;}
+        &-img:hover{background-position: 0 -48px;}
+    }
+    .toolbar{
+        height:44px;
+        background: #f5f9fb;
+        border-bottom: solid 1px #e6eff4;
+        dt{
+            float:right;
+            margin-top:6px;
+            margin-right:20px;
+            select{
+                height: 30px;
+                font-family: "microsoft yahei";
+                font-size: 16px;
+                color:$common-text;
+                padding: 0 18px;
+                margin-left:5px;
+                outline: none;
+                border-color: #d8e6ef;
+                @include borderRadius(4px);
+            }
+        }
+        dd{
+            float:left;
+            margin-top:10px;
+            margin-left:20px;
+            cursor: pointer;
+            .active{
+                .ico-rich-bold{
+                    background-position: -24px 0;
+                }
+                .ico-rich-linethrough{
+                    background-position: -24px -24px;
+                }
+            }
+        }
+        &.blur{
+            dd{
+                cursor: default;
+                .ico-rich{
+                    cursor: default;
+                }
+            }
+        }
+    }
+    .edit-container{
+        height:524px;
+        font-size: $font-middle;
+        color:$stress-text;
+        padding:16px 20px;
+        overflow-x: hidden;
+        outline: none;
+        resize: none;
+        a{
+            text-decoration: underline;
+            color:$mute-text;
+        }
+        .img{
+            display: block;
+            max-width:815px;
+            margin:30px auto;
+            padding:0 10px;    
+        }
+        .at-user{
+            color:$mute-text;
+            margin:0 5px;
+        }
+        .at-game{
+            margin:20px 0;
+            width:100%;
+            height:84px;
+            line-height: 1;
+            background: #fff;
+            position: relative;
+            user-select:none;
+            border:1px solid $color-b4;
+            @include borderRadius(6px);
+            .at-game-img{
+                width:60px;
+                height:60px;
+                position: absolute;
+                left:12px;
+                top:12px;
+                @include borderRadius(6px);
+            }
+            .title{
+                font-weight: bold;
+                position: absolute;
+                left:82px;
+                top:32px;
+            }
+        }
+        p{
+            color:$stress-text;
+            margin-bottom: 0;
+        }
+        &::-webkit-scrollbar{
+            width:8px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background: #e0e9ee;
+            border-radius: 4px;
+        }
+        &::-webkit-scrollbar-track {
+            background:#f2f7fa ;
+            border-radius: 4px;
+        }
+        &::-webkit-scrollbar-button{
+            background: transparent;
+            height: 4px;
+        }
+        .img-view{
+            text-align: center;
+            .img{
+                display: block;
+                max-width:100%;
+                margin:30px auto;
+                padding:0 10px;
+            }
+            .img-preview{
+                display: block;
+                max-width: 200px;
+                max-height: 200px;
+                min-width: 100px;
+                min-height: 50px;
+            }
+
+            .img-upload{
+                position: relative;
+                display: inline-block;
+                margin:auto;
+                .upload-status{
+                    width:100%;
+                    height:100%;
+                    position: absolute;
+                    left:0;
+                    top:0;
+                    text-align: center;
+                    color:$label-text;
+                    font-size:$font-default;
+                    background: rgba(0,0,0,.5);
+                    .progress{
+                        width:100%;
+                        position: absolute;
+                        left:50%;
+                        top:50%;
+                        @include transform(translateX(-50%) translateY(-50%));
+                    }
+                }
+                &:selected{
+                    .upload-status{
+                        background:rgba(87,145,225,.8);
+                    }
+                }
+            }
+        }
+    }
+    .placeholder{
+        visibility: visible;
+        width: 100%;
+        position: absolute;
+        left: 20px;
+        color: #ccc;
+        box-sizing: border-box;
+        pointer-events: none;
+        /* For Display */
+        margin: 0px;
+        /* For Preview Title */
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+}

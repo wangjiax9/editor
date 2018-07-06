@@ -2,10 +2,9 @@
 import './scss/ypw-editor'
 import YpwEditor from './editor'
 import test from './test'
-console.log(11)
-if(process.env.NODE_ENV === 'production') {
-    window.YpwEditor = YpwEditor
-}else{
+if(process.env.NODE_ENV === 'development') {
     test.launch()
+}else{
+    window.YpwEditor = YpwEditor
 }
 export default (window.YpwEditor || YpwEditor)
